@@ -2,6 +2,12 @@
   home works!
 </p>
 
-<div>
-  
+<div class="flex flex-col">
+  <div>Will you be my valentine???</div>
+  <div class="flex">
+    <button mat-button>
+      <span [style.font-size.px]="size">Yes</span>
+    </button>
+    <button mat-button (click)="increaseSize()" [hidden]="hidden">No</button>
+  </div>
 </div>
