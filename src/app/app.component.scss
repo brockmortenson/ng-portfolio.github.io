@@ -1,5 +1,42 @@
 header {
     width: 100%;
     height: 5rem;
-    background-color: antiquewhite;
+}
+
+main {
+    height: calc(100vh - 5rem);
+}
+
+.gradient-background {
+    transition: opacity 0.1s ease-in-out !important;
+
+    &.orange-red {
+        background-image: linear-gradient(to right, #ff3131, #ff914D);
+    }
+
+    &.blue-light-blue {
+        background-image: linear-gradient(to right, #5263ff, #5ce1e6);
+    }
+
+    &.pink-orange {
+        background-image: linear-gradient(to right, #ff66c4, #ffbf57);
+    }
+
+    &.green {
+        background-image: linear-gradient(to right, #0cc0df, #ffde59);
+    }
+
+    .route {
+        transition: all 0.1s ease-in;
+        border: 4px solid transparent;
+    }
+
+    .route:hover:not(.active) {
+        @extend .active;
+        border-width: 4px !important;
+    }
+
+    .active {
+        border: 1px solid white;
+    }
 }

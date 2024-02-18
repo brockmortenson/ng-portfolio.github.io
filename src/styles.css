@@ -3,3 +3,8 @@
 @tailwind utilities;
 
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+#root {
+    color: white;
+    font-family: 'Consolas'
+}
