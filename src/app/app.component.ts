@@ -1,7 +1,7 @@
-import { KeyValue } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { Subscription, filter } from 'rxjs';
+import { Subscription, debounceTime, filter, fromEvent, tap } from 'rxjs';
+import { CurrentsService } from 'src/services/currents.service';
 import { Routes } from 'src/shared/routes.model';
 
 @Component({
@@ -15,24 +15,33 @@ export class AppComponent implements OnInit, OnDestroy {
   public shouldReset: boolean = false;
   public routes: Routes = new Routes();
   public currentUrl: string = '';
-  private subscription: Subscription = new Subscription();
+  public isMobile: boolean = false;
+  public toggled: boolean = false;
 
-  constructor(private router: Router) { }
+  private routerSubscription: Subscription = new Subscription();
+  private mobileSubscription: Subscription = new Subscription();
+
+  constructor(private router: Router,
+    private currentsService: CurrentsService) { }
 
   public ngOnInit(): void {
-    this.subscription = this.router.events.pipe(
+    this.listenToWindowResize();
+
+    this.routerSubscription = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd),
       ).subscribe((event: any) => {
-        this.currentUrl = event.url;
-        this.setBackgroundGradient(event.url);
+        this.setCurrentUrl(event.url)
+        this.setBackgroundGradient(this.currentUrl);
     });
   }
 
   public ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.routerSubscription.unsubscribe();
+    this.mobileSubscription.unsubscribe();
   }
 
   public routeTo(url: string): void {
+    this.toggled ? this.toggleNav() : null;
     this.shouldReset = true;
   
     setTimeout(() => {
@@ -43,6 +52,18 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public unsorted(a: any, b: any): number {
     return 0;
+  }
+
+  public toggleNav(): void {
+    this.toggled = !this.toggled;
+  }
+
+  private setCurrentUrl(url: string): void {
+    if (url === '/') {
+      this.currentUrl = '/home'
+    } else {
+      this.currentUrl = url;
+    }
   }
   
   private setBackgroundGradient(url: string): void {
@@ -57,11 +78,39 @@ export class AppComponent implements OnInit, OnDestroy {
         this.gradient = 'pink-orange';
         break;
       case this.routes.contact.url:
-        this.gradient = 'green';
+        this.gradient = 'blue-yellow';
         break;
       default:
         this.gradient = 'orange-red';
         break;
     }
+  }
+
+  private listenToWindowResize(): void {
+    this.isMobileSubscription();
+    this.setIsMobile(window.innerWidth);
+
+    fromEvent(window, 'resize').pipe(
+      debounceTime(50),
+      tap((event: any) => {
+        const width = event.target['innerWidth'];
+        this.setIsMobile(width);
+      }),
+    ).subscribe();
+  }
+
+  private setIsMobile(width: number): void {
+    if (width > 850) {
+      this.currentsService.setIsMobile(false);
+    } else {
+      this.currentsService.setIsMobile(true);
+    }
+  }
+
+  private isMobileSubscription(): void {
+    this.mobileSubscription = this.currentsService.getIsMobile().subscribe((bool) => {
+      this.isMobile = bool;
+      !this.isMobile ? this.toggled = false : null;
+    });
   }
 }
