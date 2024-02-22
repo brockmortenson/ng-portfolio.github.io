@@ -1,0 +1,8 @@
+<div class="button-wrapper w-full" (click)="route(button.url)">
+  <div class="button" [class]="isMobile ? 'mobile w-32 py-4' : 'desktop mb-8 p-3'">
+    <img [class]="button.hasBorder ? 'has-border border-4 border-white border-solid rounded-full' : 'no-border'"
+    [ngClass]="{'w-32': !isMobile}"
+    [src]="button.imageSrc">
+    <p class="text-5xl pl-6" *ngIf="!isMobile">{{button.name}}</p>
+  </div>
+</div>

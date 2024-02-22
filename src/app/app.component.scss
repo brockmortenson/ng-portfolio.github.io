@@ -5,6 +5,7 @@ header {
 
 main {
     height: calc(100vh - 5rem);
+    overflow-y: auto !important;
 }
 
 .gradient-background {
@@ -38,7 +39,7 @@ main {
 
     &.mobile {
         main {
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         .icon {
@@ -52,7 +53,7 @@ main {
             }
 
             &.icon-opened {
-                background-color: #0000004f;
+                background-color: rgb(0 0 0 / 54%);
             }
 
             .mat-icon {
@@ -70,7 +71,11 @@ main {
             transition: all 0.5s ease-in-out;
 
             .overlay {
-                background-color: #0000004f;
+                background-color: rgb(0 0 0 / 54%);
+            }
+
+            :last-child {
+                overflow-y: auto;
             }
 
             &.open {
@@ -86,6 +91,8 @@ main {
 
     .active {
         border: 1px solid white;
+        // ask ilsen
+        // border-bottom: 4px solid white;
     }
 }
 

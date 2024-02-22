@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+import { ContactButtonComponent } from './contact/contact-button/contact-button.component';
 
 @NgModule({
   declarations: [				
@@ -14,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
     AboutMeComponent,
     ProjectsComponent,
     ContactComponent,
+    ContactButtonComponent,
    ],
   imports: [
     SharedModule,

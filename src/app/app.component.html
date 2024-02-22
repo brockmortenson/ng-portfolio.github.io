@@ -1,7 +1,7 @@
 <div id="root" class="gradient-background"
 [class]="gradient"
 [ngClass]="{'mobile': isMobile}"
-[style.opacity]="shouldReset ? 0.7 : 1">
+[style.opacity]="dampenGradientOpacity ? 0.7 : 1">
   <ng-container *ngIf="!isMobile">
     <header class="px-3 flex items-center justify-center bg-transparent">
       <ng-container *ngFor="let route of routes | keyvalue: unsorted">
@@ -11,7 +11,7 @@
       </ng-container>
     </header>
   </ng-container>
-  
+
   <ng-container *ngIf="isMobile">
     <div class="icon pr-5 h-20 flex justify-end items-center"
     [ngClass]="{'icon-opened': toggled}">
@@ -20,8 +20,8 @@
 
     <header class="nav fixed w-full bg-transparent flex"
     [ngClass]="{'open': toggled, 'closed': !toggled}">
-      <div class="overlay w-2/3" (click)="toggleNav()"></div>
-      <div class="w-1/3 overlay">
+      <div class="overlay w-1/2" (click)="toggleNav()"></div>
+      <div class="w-1/2 overlay">
         <ng-container *ngFor="let route of routes | keyvalue: unsorted">
           <div class="py-4">
             <div class="py-2 px-3 mx-3 cursor-pointer text-2xl rounded-md route"

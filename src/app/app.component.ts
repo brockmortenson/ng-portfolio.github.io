@@ -12,7 +12,7 @@ import { Routes } from 'src/shared/routes.model';
 export class AppComponent implements OnInit, OnDestroy {
   public title = 'portfolio';
   public gradient: string = '';
-  public shouldReset: boolean = false;
+  public dampenGradientOpacity: boolean = false;
   public routes: Routes = new Routes();
   public currentUrl: string = '';
   public isMobile: boolean = false;
@@ -41,12 +41,16 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   public routeTo(url: string): void {
+    if (url === this.currentUrl) {
+      return;
+    }
+
     this.toggled ? this.toggleNav() : null;
-    this.shouldReset = true;
+    this.dampenGradientOpacity = true;
   
     setTimeout(() => {
       this.router.navigate([url]);
-      this.shouldReset = false;
+      this.dampenGradientOpacity = false;
     }, 100);
   }
 

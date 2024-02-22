@@ -1,0 +1,24 @@
+.button-wrapper {
+    .button {
+        transition: all 0.2s ease-in-out;
+
+        &.desktop {
+            display: flex;
+            align-items: center;
+            border: 4px solid transparent;
+            border-radius: 5rem;
+        }
+
+        &.desktop:hover {
+            border: 4px solid white;
+        }
+        
+        &.mobile {
+            cursor: pointer;
+        }
+
+        &.mobile:hover {
+            transform: scale(1.2, 1.2);
+        }
+    }
+}
