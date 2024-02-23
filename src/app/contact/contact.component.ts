@@ -10,18 +10,25 @@ import { Button } from 'src/shared/button.interface';
 })
 export class ContactComponent implements OnInit, OnDestroy {
   public isMobile: boolean = false;
+  public email: string = '246szdkrc@mozmail.com';
   public buttons: Array<Button> = [
     {
-      imageSrc: '../../assets/images/github-icon-png-white.png',
+      imageSrc: 'https://vectorified.com/images/email-icon-white-transparent-35.png',
       hasBorder: false,
-      url: 'https://github.com/brockmortenson',
-      name: '<github/>',
+      url: 'mailto:246szdkrc@mozmail.com',
+      name: '<email-me/>',
     },
     {
       imageSrc: '../../assets/images/white-linkedin-icon.jpg',
       hasBorder: true,
       url: 'https://www.linkedin.com/in/brock-mortenson-webdev/',
       name: '<linkedin/>',
+    },
+    {
+      imageSrc: '../../assets/images/github-icon-png-white.png',
+      hasBorder: false,
+      url: 'https://github.com/brockmortenson',
+      name: '<github/>',
     },
   ];
 
@@ -37,6 +44,11 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy(): void {
     this.mobileSubscription.unsubscribe();
+  }
+
+  public sendEmail(): void {
+    // window.location.href = 
+    // mailto
   }
   
 }
