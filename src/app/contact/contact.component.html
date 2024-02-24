@@ -4,7 +4,7 @@
 
   <div class="flex flex-col justify-between"
   [class]="isMobile ? 'pt-8 items-center' : 'items-start'">
-    <ng-container *ngFor="let button of buttons">
+    <ng-container *ngFor="let button of contactButtons.buttons">
       <contact-button-component
       [isMobile]="isMobile"
       [button]="button"></contact-button-component>
