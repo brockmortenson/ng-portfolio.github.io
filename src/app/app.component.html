@@ -15,7 +15,8 @@
   <ng-container *ngIf="isMobile">
     <div class="icon pr-5 h-20 flex justify-end items-center"
     [ngClass]="{'icon-opened': toggled}">
-      <mat-icon (click)="toggleNav()">menu</mat-icon>
+      <mat-icon *ngIf="!toggled" (click)="toggleNav()">menu</mat-icon>
+      <mat-icon *ngIf="toggled" (click)="toggleNav()">close</mat-icon>
     </div>
 
     <header class="nav fixed w-full bg-transparent flex"
