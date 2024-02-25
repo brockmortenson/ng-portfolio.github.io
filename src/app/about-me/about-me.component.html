@@ -1,12 +1,30 @@
-<div class="wrapper h-full">
-  <div class="flex justify-evenly items-center" [class]="isMobile ? '' : ''">
-    <div class="image-wrapper" [class]="isMobile ? 'w-1/2' : 'w-96'">
-      <img class="rounded-full" src="https://media.licdn.com/dms/image/C4E03AQE8zKIzHABiTQ/profile-displayphoto-shrink_800_800/0/1620419065424?e=2147483647&v=beta&t=UHSVsxE2y2qnFagSpcCJf1HfbC7b2ZnCt6axqIUA-OE" alt="brock-img">
-    </div>
-    <div class="summary break-words text-center w-1/2" [class]="isMobile ? 'pl-4 text-4xl' : 'text-6xl'">hi, i'm brock</div>
-  </div>
+<ng-container *ngIf="!showSkills; else skills">
+  <div class="wrapper h-full">
 
-  <div class="skills pt-8">
-    <span class="py-2 px-3 rounded-md cursor-pointer text-2xl" [class]="isMobile ? '' : ''">// skills</span>
+    <img [src]="image" alt="">
+    
+    <div class="flex justify-evenly items-center">
+      <div class="image-wrapper" [class]="isMobile ? 'w-1/2' : 'w-96'">
+        <img class="rounded-full" src="https://media.licdn.com/dms/image/C4E03AQE8zKIzHABiTQ/profile-displayphoto-shrink_800_800/0/1620419065424?e=2147483647&v=beta&t=UHSVsxE2y2qnFagSpcCJf1HfbC7b2ZnCt6axqIUA-OE" alt="brock-img">
+      </div>
+      <div class="summary break-words text-center w-1/2" [class]="isMobile ? 'pl-4 text-4xl' : 'text-6xl'">
+        <div class="mb-8">hi, i'm brock</div>
+        <span class="py-2 px-3 rounded-md cursor-pointer text-2xl"
+        (click)="toggleSkills()">{{isMobile ? '// skills' : '// check out my skills'}}</span>
+      </div>
+    </div>
+
+    <div class="pt-8 flex flex-col" [class]="isMobile ? 'text-xl' : 'text-2xl'">
+      <span>
+        I currently work as a Software Developer II. I specialize in web development and I have experience with various technologies. My expertise lies heavily in web-related technologies along with some non-web-related technologies sprinkled in (see 'skills' button above to view a more in-depth analysis of all my skills).
+      </span>
+      <span class="py-8">
+        In my free time, my number one priority is spending time with my wife. I also enjoy diving into new technologies, creating projects using those technologies, and staying up-to-date on the latest news in the tech world. Additionally, I like basketball and football, as well as being outdoors and strength training. I'm a big fan of video games and I even built my own PC to be able to switch from console.
+      </span>
+    </div>
   </div>
-</div>
+</ng-container>
+
+<ng-template #skills>
+  <skills-component (toggleSkillsEvent)="toggleSkills($event)"></skills-component>
+</ng-template>
