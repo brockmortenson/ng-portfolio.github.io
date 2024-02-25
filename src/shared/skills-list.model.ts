@@ -26,11 +26,11 @@ export class SkillsList {
                 name: 'RxJS',
             },
             {
-                imageSrc: './assets/images/html-logo.png',
+                imageSrc: './assets/images/html-logo.webp',
                 name: 'HTML',
             },
             {
-                imageSrc: './assets/images/css-logo.png',
+                imageSrc: './assets/images/css-logo.jpg',
                 name: 'CSS',
             },
             {
@@ -46,7 +46,7 @@ export class SkillsList {
                 name: 'C#',
             },
             {
-                imageSrc: './assets/images/dotnet-core-logo.webp',
+                imageSrc: './assets/images/dotnet-core-logo.png',
                 name: '.NET Core',
             },
             {

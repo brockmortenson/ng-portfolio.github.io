@@ -5,7 +5,11 @@ header {
 
 main {
     height: calc(100vh - 5rem);
-    overflow-y: auto !important;
+    overflow-y: auto;
+
+    &.no-scroll {
+        overflow-y: hidden;;
+    }
 }
 
 .gradient-background {

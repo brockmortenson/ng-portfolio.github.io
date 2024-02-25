@@ -5,7 +5,7 @@
   <ng-container *ngIf="!isMobile">
     <header class="px-3 flex items-center justify-center bg-transparent">
       <ng-container *ngFor="let route of routes | keyvalue: unsorted">
-        <div class="py-2 px-3 mx-3 cursor-pointer text-2xl rounded-md route"
+        <div class="py-2 px-3 mx-3 cursor-pointer text-xl rounded-md route"
         [ngClass]="{'active': currentUrl === route.value.url}"
         (click)="routeTo(route.value.url)">{{route.value.name}}</div>
       </ng-container>
@@ -34,7 +34,7 @@
     </header>
   </ng-container>
   
-  <main class="py-3 px-8 h-full">
+  <main class="py-3 px-8 h-full" [ngClass]="{'no-scroll': toggled}">
     <router-outlet></router-outlet>
   </main>
 </div>
