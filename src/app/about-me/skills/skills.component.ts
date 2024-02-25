@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SkillsList } from 'src/shared/skills-list.model';
 
 @Component({
   selector: 'skills-component',
@@ -7,6 +8,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
   @Output() toggleSkillsEvent = new EventEmitter<boolean>();
+
+  public skillsList: SkillsList = new SkillsList();
 
   constructor() { }
 

@@ -3,6 +3,8 @@
 
   <div class="content">
     <div class="graph"></div>
-    <div class="skills"></div>
+    <div class="skills" *ngFor="let skill of skillsList.skills">
+      <img class="w-20" [src]="skill.imageSrc" [alt]="skill.name">
+    </div>
   </div>
 </div>
