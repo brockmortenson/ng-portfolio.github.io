@@ -1,0 +1,15 @@
+.wrapper {
+    @extend .active-thin;
+
+    span {
+        background-color: #5263ffcf;
+    }
+}
+
+.active-thick {
+    border: 4px solid white;
+}
+
+.active-thin {
+    border: 1px solid white;
+}

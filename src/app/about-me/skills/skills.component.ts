@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { SkillsList } from 'src/shared/skills-list.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Skill, SkillsList } from 'src/shared/skills-list.model';
 
 @Component({
   selector: 'skills-component',
@@ -8,8 +8,10 @@ import { SkillsList } from 'src/shared/skills-list.model';
 })
 export class SkillsComponent implements OnInit {
   @Output() toggleSkillsEvent = new EventEmitter<boolean>();
+  @Input() public isMobile: boolean = false;
 
   public skillsList: SkillsList = new SkillsList();
+  public currentSkill: Skill | null = null;
 
   constructor() { }
 
@@ -18,6 +20,14 @@ export class SkillsComponent implements OnInit {
 
   public toggleSkills(): void {
     this.toggleSkillsEvent.emit(true);
+  }
+
+  public setCurrentSkill(skill: Skill): void {
+    if (this.currentSkill === skill) {
+      return;
+    }
+
+    this.currentSkill = skill;
   }
 
 }

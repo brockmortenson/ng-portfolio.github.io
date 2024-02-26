@@ -23,5 +23,5 @@
 </ng-container>
 
 <ng-template #skills>
-  <skills-component (toggleSkillsEvent)="toggleSkills($event)"></skills-component>
+  <skills-component (toggleSkillsEvent)="toggleSkills($event)" [isMobile]="isMobile"></skills-component>
 </ng-template>
