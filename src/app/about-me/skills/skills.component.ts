@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Skill, SkillsList } from 'src/shared/skills-list.model';
 
 @Component({
@@ -13,7 +13,7 @@ export class SkillsComponent implements OnInit {
   public skillsList: SkillsList = new SkillsList();
   public currentSkill: Skill | null = null;
 
-  constructor() { }
+  constructor(private cdr: ChangeDetectorRef) { }
 
   public ngOnInit() {
   }
@@ -26,6 +26,9 @@ export class SkillsComponent implements OnInit {
     if (this.currentSkill === skill) {
       return;
     }
+
+    this.currentSkill = null; // <-- Required for
+    this.cdr.detectChanges(); // graph animation -->
 
     this.currentSkill = skill;
   }

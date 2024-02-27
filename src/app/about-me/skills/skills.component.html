@@ -18,7 +18,7 @@
     </div>
 
     <ng-container *ngIf="currentSkill; else selectSkill">
-      <skill-analysis-component [isMobile]="isMobile" [skill]="currentSkill"></skill-analysis-component>
+      <skill-analysis-component class="w-full" [isMobile]="isMobile" [skill]="currentSkill"></skill-analysis-component>
     </ng-container>
 
     <ng-template #selectSkill>

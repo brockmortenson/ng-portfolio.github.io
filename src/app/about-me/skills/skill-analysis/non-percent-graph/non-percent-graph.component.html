@@ -1,0 +1,29 @@
+<div class="flex">
+  <div class="flex flex-col items-end pr-2 h-24">
+    <ng-container *ngFor="let skillAttribute of skill.skillAttributes; let i = index">
+      <ng-container *ngIf="!skillAttribute.graphAsPercent">
+        <p class="w-fit text-xs text-nowrap" [ngClass]="{'py-4': i === 2}">{{skillAttribute.subText ? skillAttribute.name + ' ' + skillAttribute.subText : skillAttribute.name}}</p>
+      </ng-container>
+    </ng-container>
+  </div>
+
+  <div class="flex flex-col w-full">
+    <div class="border-l-4 border-b-4 rounded-bl-md border-white h-24">
+      <div class="flex justify-start flex-col w-full">
+        <ng-container *ngFor="let skillAttribute of skill.skillAttributes; let i = index">
+          <ng-container *ngIf="!skillAttribute.graphAsPercent">
+            <skill-graph-component class="w-full"
+            [isMobile]="isMobile"
+            [skillAttribute]="skillAttribute"
+            [ngClass]="{'py-4': i === 2}"></skill-graph-component>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+    <div class="measurement flex justify-between">
+      <span>0</span>
+      <span>5</span>
+      <span>10</span>
+    </div>
+  </div>
+</div>

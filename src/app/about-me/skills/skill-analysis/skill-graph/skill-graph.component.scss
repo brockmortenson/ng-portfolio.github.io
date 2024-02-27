@@ -1,0 +1,19 @@
+$attribute-width: var('Mastery');
+$attribute-width: var('Proficiency');
+$attribute-width: var('Experience');
+$attribute-width: var('Enjoyment');
+
+.bar {
+    background-color: #5263ffcf;
+    animation: slide-attribute 0.5s;
+}
+
+@keyframes slide-attribute {
+    0% {
+        width: 10%;
+    }
+
+    100% {
+        width: $attribute-width;
+    }
+}
