@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Skill } from 'src/shared/skills-list.model';
+import { Skill, SkillAttribute } from 'src/shared/skills-list.model';
 
 @Component({
   selector: 'skill-analysis-component',
@@ -13,6 +13,17 @@ export class SkillAnalysisComponent implements OnInit {
   constructor() { }
 
   public ngOnInit() {
+  }
+
+  public filterSkillAttributes(isPercentGraph: boolean): Array<SkillAttribute> {
+    let attributes = [];
+    if (isPercentGraph) {
+      attributes = this.skill.skillAttributes.filter((x) => x.graphAsPercent);
+      return attributes;
+    } else {
+      attributes =  this.skill.skillAttributes.filter((x) => !x.graphAsPercent);
+      return attributes;
+    }
   }
 
 }

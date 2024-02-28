@@ -1,17 +1,19 @@
 <div class="wrapper p-4 rounded-md w-full">
-  <div class="container flex" [class]="isMobile ? 'flex-col items-center' : ''">
-    <div class="image-wrapper w-16 h-20">
-      <img [src]="skill.imageSrc" [alt]="skill.name">
+  <div class="container flex" [class]="isMobile ? 'flex-col items-center' : 'flex-col items-center'">
+    <div class="image-wrapper flex items-center h-20">
+      <img class="w-16" [src]="skill.imageSrc" [alt]="skill.name">
+      <p class="text-xl pl-4">{{skill.name}}</p>
     </div>
 
-    <percent-graph-component class="w-full mb-8"
+    <graph-component class="w-full mb-8"
     [isMobile]="isMobile"
-    [skill]="skill"></percent-graph-component>
+    [skillAttributes]="filterSkillAttributes(true)"
+    [isPercentGraph]="true"></graph-component>
 
-    <non-percent-graph-component class="w-full"
+    <graph-component class="w-full"
     [isMobile]="isMobile"
-    [skill]="skill"></non-percent-graph-component>
+    [skillAttributes]="filterSkillAttributes(false)"
+    [isPercentGraph]="false"></graph-component>
 
-    <!-- <div class="info">{{skill.name}} asdf asdf asdf asdfasdf asdf asdf</div> -->
   </div>
 </div>

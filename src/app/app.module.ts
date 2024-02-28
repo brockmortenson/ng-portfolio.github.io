@@ -10,9 +10,8 @@ import { ContactButtonComponent } from './contact/contact-button/contact-button.
 import { ProjectPreviewComponent } from './projects/project-preview/project-preview.component';
 import { SkillsComponent } from './about-me/skills/skills.component';
 import { SkillAnalysisComponent } from './about-me/skills/skill-analysis/skill-analysis.component';
-import { SkillGraphComponent } from './about-me/skills/skill-analysis/skill-graph/skill-graph.component';
-import { PercentGraphComponent } from './about-me/skills/skill-analysis/percent-graph/percent-graph.component';
-import { NonPercentGraphComponent } from './about-me/skills/skill-analysis/non-percent-graph/non-percent-graph.component';
+import { GraphBarComponent } from './about-me/skills/skill-analysis/graph/graph-bar/graph-bar.component';
+import { GraphComponent } from './about-me/skills/skill-analysis/graph/graph.component';
 
 @NgModule({
   declarations: [				
@@ -21,9 +20,8 @@ import { NonPercentGraphComponent } from './about-me/skills/skill-analysis/non-p
     AboutMeComponent,
     SkillsComponent,
     SkillAnalysisComponent,
-    SkillGraphComponent,
-    PercentGraphComponent,
-    NonPercentGraphComponent,
+    GraphBarComponent,
+    GraphComponent,
     ProjectsComponent,
     ProjectPreviewComponent,
     ContactComponent,

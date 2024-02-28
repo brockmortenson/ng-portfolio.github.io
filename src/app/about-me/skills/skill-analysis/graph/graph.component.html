@@ -1,7 +1,7 @@
 <div class="flex">
-  <div class="flex flex-col items-end pr-2 w-fit">
+  <div class="flex flex-col items-end pr-2" [class]="isMobile ? 'w-fit' : 'w-24'">
     <ng-container *ngFor="let skillAttribute of skillAttributes; let i = index">
-      <p class="w-fit text-xs text-nowrap py-2" [ngClass]="{'pt-4': i === 0}">{{skillAttribute.name}}</p>
+      <p class="w-fit text-xs text-nowrap whitespace-nowrap py-2" [ngClass]="{'pt-4': i === 0}">{{skillAttribute.name}}</p>
     </ng-container>
   </div>
 
@@ -9,17 +9,17 @@
     <div class="border-l-4 border-b-4 rounded-bl-md border-white">
       <div class="flex justify-start flex-col w-full">
         <ng-container *ngFor="let skillAttribute of skillAttributes; let i = index">
-          <skill-graph-component class="w-full py-2"
+          <graph-bar-component class="w-full py-2"
           [isMobile]="isMobile"
           [skillAttribute]="skillAttribute"
-          [ngClass]="{'pt-4': i === 0}"></skill-graph-component>
+          [ngClass]="{'pt-4': i === 0}"></graph-bar-component>
         </ng-container>
       </div>
     </div>
     <div class="measurement flex justify-between">
-      <span>0</span>
-      <span>5</span>
-      <span>10</span>
+      <span>{{isPercentGraph ? '0%' : '0'}}</span>
+      <span>{{isPercentGraph ? '50%' : '5'}}</span>
+      <span>{{isPercentGraph ? '100%' : '10'}}</span>
     </div>
   </div>
 </div>

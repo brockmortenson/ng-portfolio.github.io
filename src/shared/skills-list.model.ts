@@ -1,7 +1,7 @@
 // HOW TO ADD A NEW SKILL ATTRIBUTE
 // 1. Add new SkillAttribute object to the skillAttributes array 
 // in the specific skill you want that attribute to show in.
-// 2. Add the skillAttribute.name as a scss var in the 'skill-graph.component.scss' file.
+// 2. Add the skillAttribute.name as a scss var in the 'graph-bar.component.scss' file.
 
 export class SkillsList {
     public skills: Array<Skill>;
@@ -172,7 +172,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Proficiency',
-                        level: '10',
+                        level: '100',
                         graphAsPercent: true,
                         isYear: false,
                     },

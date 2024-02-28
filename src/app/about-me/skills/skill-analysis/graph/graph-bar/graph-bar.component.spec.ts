@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { NonPercentGraphComponent } from './non-percent-graph.component';
+import { GraphBarComponent } from './graph-bar.component';
 
-describe('NonPercentGraphComponent', () => {
-  let component: NonPercentGraphComponent;
-  let fixture: ComponentFixture<NonPercentGraphComponent>;
+describe('GraphBarComponent', () => {
+  let component: GraphBarComponent;
+  let fixture: ComponentFixture<GraphBarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NonPercentGraphComponent ]
+      declarations: [ GraphBarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NonPercentGraphComponent);
+    fixture = TestBed.createComponent(GraphBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

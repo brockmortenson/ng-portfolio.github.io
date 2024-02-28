@@ -1,20 +1,23 @@
 <div class="wrapper">
   <span class="py-2 px-3 rounded-md cursor-pointer" (click)="toggleSkills()">// back</span>
 
-  <div class="skills-wrapper mt-8 p-4 flex"
+  <div class="skills-wrapper rounded-md mt-8 p-4 flex"
   [ngClass]="{'items-center flex-col': isMobile}">
-    <p class="pb-4">// select a skill</p>
+    <div class="flex flex-col"
+    [ngClass]="{'items-center': isMobile}">
+      <p class="pb-4">// select a skill</p>
 
-    <div class="skills rounded-md grid grid-cols-7 gap-4 w-fit active-thin p-4"
-    [ngClass]="{'mb-8': isMobile}">
-      <ng-container *ngFor="let skill of skillsList.skills">
-        <div class="image-wrapper w-6 cursor-pointer"
-        [ngClass]="{'selected-skill': currentSkill === skill}"
-        [matTooltip]="skill.name"
-        (click)="setCurrentSkill(skill)">
-          <img [src]="skill.imageSrc" [alt]="skill.name">
-        </div>
-      </ng-container>
+      <div class="skills rounded-md grid grid-cols-7 gap-4 w-fit active-thin p-4"
+      [ngClass]="{'mb-8': isMobile}">
+        <ng-container *ngFor="let skill of skillsList.skills">
+          <div class="image-wrapper w-6 cursor-pointer"
+          [ngClass]="{'selected-skill': currentSkill === skill}"
+          [matTooltip]="skill.name"
+          (click)="setCurrentSkill(skill)">
+            <img [src]="skill.imageSrc" [alt]="skill.name">
+          </div>
+        </ng-container>
+      </div>
     </div>
 
     <ng-container *ngIf="currentSkill; else selectSkill">

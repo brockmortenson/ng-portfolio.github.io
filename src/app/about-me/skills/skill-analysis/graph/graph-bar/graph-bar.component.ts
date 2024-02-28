@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SkillAttribute } from 'src/shared/skills-list.model';
 
 @Component({
-  selector: 'skill-graph-component',
-  templateUrl: './skill-graph.component.html',
-  styleUrls: ['./skill-graph.component.scss'],
+  selector: 'graph-bar-component',
+  templateUrl: './graph-bar.component.html',
+  styleUrls: ['./graph-bar.component.scss'],
 })
-export class SkillGraphComponent implements OnInit {
+export class GraphBarComponent implements OnInit {
   @Input() public isMobile: boolean = false;
   @Input() public skillAttribute!: SkillAttribute;
 
