@@ -1,3 +1,8 @@
+// HOW TO ADD A NEW SKILL ATTRIBUTE
+// 1. Add new SkillAttribute object to the skillAttributes array 
+// in the specific skill you want that attribute to show in.
+// 2. Add the skillAttribute.name as a scss var in the 'skill-graph.component.scss' file.
+
 export class SkillsList {
     public skills: Array<Skill>;
 
@@ -22,11 +27,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '3',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -53,11 +57,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '2',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -84,11 +87,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '3',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -115,11 +117,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '4',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -146,11 +147,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '3',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -177,11 +177,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '4',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -208,11 +207,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '4',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -239,11 +237,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '3',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -270,11 +267,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '3',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -301,11 +297,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '3',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -332,11 +327,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '3',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -363,11 +357,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '2',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -394,11 +387,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '2',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -425,11 +417,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '3',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -456,11 +447,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '1',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -487,11 +477,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '4',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -518,11 +507,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '3',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -549,11 +537,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '3',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -580,11 +567,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '3',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -611,11 +597,10 @@ export class SkillsList {
                         isYear: false,
                     },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '4',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -641,12 +626,17 @@ export class SkillsList {
                         graphAsPercent: true,
                         isYear: false,
                     },
+                    // {
+                    //     name: 'Ilsen',
+                    //     level: '15',
+                    //     graphAsPercent: true,
+                    //     isYear: false,
+                    // },
                     {
-                        name: 'Experience',
+                        name: 'Exp. (yrs)',
                         level: '2',
                         graphAsPercent: false,
                         isYear: true,
-                        subText: '(yrs.)',
                     },
                     {
                         name: 'Enjoyment',
@@ -671,5 +661,4 @@ export interface SkillAttribute {
     level: string;
     graphAsPercent: boolean;
     isYear: boolean;
-    subText?: string;
 }

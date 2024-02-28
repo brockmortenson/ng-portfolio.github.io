@@ -1,22 +1,18 @@
 <div class="flex">
-  <div class="flex flex-col items-end pr-2 h-24">
-    <ng-container *ngFor="let skillAttribute of skill.skillAttributes; let i = index">
-      <ng-container *ngIf="skillAttribute.graphAsPercent">
-        <p class="w-fit text-xs" [ngClass]="{'py-4': i === 0}">{{skillAttribute.name}}</p>
-      </ng-container>
+  <div class="flex flex-col items-end pr-2 w-fit">
+    <ng-container *ngFor="let skillAttribute of skillAttributes; let i = index">
+      <p class="w-fit text-xs text-nowrap py-2" [ngClass]="{'pt-4': i === 0}">{{skillAttribute.name}}</p>
     </ng-container>
   </div>
 
   <div class="flex flex-col w-full">
-    <div class="border-l-4 border-b-4 rounded-bl-md border-white h-24">
+    <div class="border-l-4 border-b-4 rounded-bl-md border-white">
       <div class="flex justify-start flex-col w-full">
-        <ng-container *ngFor="let skillAttribute of skill.skillAttributes; let i = index">
-          <ng-container *ngIf="skillAttribute.graphAsPercent">
-            <skill-graph-component class="w-full"
-            [isMobile]="isMobile"
-            [skillAttribute]="skillAttribute"
-            [ngClass]="{'py-4': i === 0}"></skill-graph-component>
-          </ng-container>
+        <ng-container *ngFor="let skillAttribute of skillAttributes; let i = index">
+          <skill-graph-component class="w-full py-2"
+          [isMobile]="isMobile"
+          [skillAttribute]="skillAttribute"
+          [ngClass]="{'pt-4': i === 0}"></skill-graph-component>
         </ng-container>
       </div>
     </div>
