@@ -10,6 +10,7 @@ export class GraphComponent implements OnInit {
   @Input() public isMobile: boolean = false;
   @Input() public skillAttributes: Array<SkillAttribute> = [];
   @Input() public isPercentGraph!: boolean;
+  @Input() public skillColor!: string;
 
   constructor() { }
 

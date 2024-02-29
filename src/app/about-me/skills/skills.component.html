@@ -5,10 +5,10 @@
   [ngClass]="{'items-center flex-col': isMobile}">
     <div class="flex flex-col"
     [ngClass]="{'items-center': isMobile}">
-      <p class="pb-4">// select a skill</p>
+      <p class="pb-4" *ngIf="isMobile">// select a skill</p>
 
-      <div class="skills rounded-md grid grid-cols-7 gap-4 w-fit active-thin p-4"
-      [ngClass]="{'mb-8': isMobile}">
+      <div class="skills rounded-md grid gap-4 w-fit active-thin p-4"
+      [ngClass]="{'mb-8 grid-cols-7': isMobile, 'grid-cols-3 mr-8': !isMobile}">
         <ng-container *ngFor="let skill of skillsList.skills">
           <div class="image-wrapper w-6 cursor-pointer"
           [ngClass]="{'selected-skill': currentSkill === skill}"
@@ -21,11 +21,16 @@
     </div>
 
     <ng-container *ngIf="currentSkill; else selectSkill">
-      <skill-analysis-component class="w-full" [isMobile]="isMobile" [skill]="currentSkill"></skill-analysis-component>
+      <skill-analysis-component class="w-full"
+      [ngClass]="{'desktop': !isMobile}"
+      [isMobile]="isMobile"
+      [skill]="currentSkill"></skill-analysis-component>
     </ng-container>
 
     <ng-template #selectSkill>
-      <div class="text-center">// select a skill to view more detailed information here</div>
+      <div class="flex justify-center items-center" [ngClass]="{'desktop text-xl': !isMobile}">
+        <p class="text-center">// select a skill to view more detailed information here</p>
+      </div>
     </ng-template>
   </div>
 </div>

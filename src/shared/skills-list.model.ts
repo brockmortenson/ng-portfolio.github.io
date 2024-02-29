@@ -13,6 +13,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/angular-logo.webp',
                 name: 'Angular',
+                color: 'rgb(216 0 41)',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -43,6 +44,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/react-logo.png',
                 name: 'React',
+                color: 'rgb(49 217 255)',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -73,6 +75,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/ts-icon.png',
                 name: 'TypeScript',
+                color: 'rgb(49 124 202)',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -103,6 +106,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/js-logo.png',
                 name: 'JavaScript',
+                color: 'rgb(247 220 0)',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -133,6 +137,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/RxJS_logo.png',
                 name: 'RxJS',
+                color: 'rgb(232 11 152)',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -163,6 +168,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/html-logo.webp',
                 name: 'HTML',
+                color: 'rgb(250 105 0)',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -193,6 +199,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/css-logo.jpg',
                 name: 'CSS',
+                color: 'rgb(30 157 231)',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -223,6 +230,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/tailwind-icon.png',
                 name: 'Tailwind',
+                color: 'rgb(0 0 0)',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -253,6 +261,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/sass-logo.png',
                 name: 'Sass',
+                color: 'rgb(200 102 153)',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -283,6 +292,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/c-sharp-logo.png',
                 name: 'C#',
+                color: '#965497',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -313,6 +323,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/dotnet-core-logo.png',
                 name: '.NET Core',
+                color: '#5b31eb',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -343,6 +354,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/node-js-logo.webp',
                 name: 'Node.js',
+                color: '#46483e',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -373,6 +385,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/postgresql-logo.png',
                 name: 'PostgreSQL',
+                color: '#32688f',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -403,6 +416,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/mongodb_logo.png',
                 name: 'MongoDB',
+                color: '#4c9e36',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -433,6 +447,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/blazor-logo.png',
                 name: 'Blazor',
+                color: '#513793',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -463,6 +478,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/git-logo.png',
                 name: 'Git',
+                color: '#eb4a22',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -493,6 +509,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/azure-devops-logo.webp',
                 name: 'Azure DevOps',
+                color: '#137bd4',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -523,6 +540,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/docker-logo.png',
                 name: 'Docker',
+                color: '#1b6af0',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -553,6 +571,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/visual-studio-logo.png',
                 name: 'Visual Studio',
+                color: '#6939af',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -574,7 +593,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Enjoyment',
-                        level: '3',
+                        level: '5',
                         graphAsPercent: false,
                         isYear: false,
                     },
@@ -583,6 +602,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/vscode-logo.png',
                 name: 'VS Code',
+                color: '#117acc',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -613,6 +633,7 @@ export class SkillsList {
             {
                 imageSrc: './assets/images/jest-logo.png',
                 name: 'Jest',
+                color: '#c84000',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -626,12 +647,6 @@ export class SkillsList {
                         graphAsPercent: true,
                         isYear: false,
                     },
-                    // {
-                    //     name: 'Ilsen',
-                    //     level: '15',
-                    //     graphAsPercent: true,
-                    //     isYear: false,
-                    // },
                     {
                         name: 'Exp. (yrs)',
                         level: '2',
@@ -644,6 +659,12 @@ export class SkillsList {
                         graphAsPercent: false,
                         isYear: false,
                     },
+                    {
+                        name: 'Comfortability',
+                        level: '8',
+                        graphAsPercent: false,
+                        isYear: false,
+                    },
                 ],
             },
         ];
@@ -653,6 +674,7 @@ export class SkillsList {
 export interface Skill {
     imageSrc: string;
     name: string;
+    color: string;
     skillAttributes: Array<SkillAttribute>;
 }
 

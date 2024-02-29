@@ -9,6 +9,7 @@ import { SkillAttribute } from 'src/shared/skills-list.model';
 export class GraphBarComponent implements OnInit {
   @Input() public isMobile: boolean = false;
   @Input() public skillAttribute!: SkillAttribute;
+  @Input() public skillColor!: string;
 
   constructor() { }
 

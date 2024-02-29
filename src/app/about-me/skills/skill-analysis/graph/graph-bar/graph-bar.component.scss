@@ -4,8 +4,11 @@ $attribute-width: var('Exp. (yrs)');
 $attribute-width: var('Enjoyment');
 
 .bar {
-    background-color: #5263ffcf;
     animation: slide-attribute 0.5s;
+
+    p {
+        animation: make-visible 0.5s;
+    }
 }
 
 @keyframes slide-attribute {
@@ -15,5 +18,15 @@ $attribute-width: var('Enjoyment');
 
     100% {
         width: $attribute-width;
+    }
+}
+
+@keyframes make-visible {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

@@ -8,12 +8,14 @@
     <graph-component class="w-full mb-8"
     [isMobile]="isMobile"
     [skillAttributes]="filterSkillAttributes(true)"
-    [isPercentGraph]="true"></graph-component>
+    [isPercentGraph]="true"
+    [skillColor]="skill.color"></graph-component>
 
     <graph-component class="w-full"
     [isMobile]="isMobile"
     [skillAttributes]="filterSkillAttributes(false)"
-    [isPercentGraph]="false"></graph-component>
+    [isPercentGraph]="false"
+    [skillColor]="skill.color"></graph-component>
 
   </div>
 </div>
