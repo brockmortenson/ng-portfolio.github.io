@@ -1,6 +1,6 @@
 <span class="bar h-full rounded-full flex justify-end items-center"
-[style.width]="changeAttributeToPercent()"
+[style.width]="setWidthFromSkillLevel()"
 [style.background-color]="skillColor"
-[matTooltip]="skillAttribute.name">
-  <p class="pr-2">{{!skillAttribute.graphAsPercent ? skillAttribute.level : skillAttribute.level + '%'}}</p>
+[matTooltip]="skillAttribute.name + ' - ' + formatSkillLevel()">
+  <p class="pr-2">{{formatSkillLevel()}}</p>
 </span>

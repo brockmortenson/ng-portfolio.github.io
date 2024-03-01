@@ -1,5 +1,6 @@
-<p>
-  projects works!
-</p>
-
-<project-preview-component></project-preview-component>
+<div class="wrapper">
+  <p class="title">// check out some of my work</p>
+  <ng-container *ngFor="let project of projectList.projects">
+    <project-preview-component [isMobile]="isMobile" [project]="project"></project-preview-component>
+  </ng-container>
+</div>

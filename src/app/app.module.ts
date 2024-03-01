@@ -12,6 +12,7 @@ import { SkillsComponent } from './about-me/skills/skills.component';
 import { SkillAnalysisComponent } from './about-me/skills/skill-analysis/skill-analysis.component';
 import { GraphBarComponent } from './about-me/skills/skill-analysis/graph/graph-bar/graph-bar.component';
 import { GraphComponent } from './about-me/skills/skill-analysis/graph/graph.component';
+import { SafePipe } from 'src/shared/pipes/safe.pipe';
 
 @NgModule({
   declarations: [				
@@ -26,6 +27,7 @@ import { GraphComponent } from './about-me/skills/skill-analysis/graph/graph.com
     ProjectPreviewComponent,
     ContactComponent,
     ContactButtonComponent,
+    SafePipe,
    ],
   imports: [
     SharedModule,

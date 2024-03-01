@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription, debounceTime, filter, fromEvent, tap } from 'rxjs';
 import { CurrentsService } from 'src/services/currents.service';
-import { Routes } from 'src/shared/routes.model';
+import { Routes } from 'src/shared/models/routes.model';
 
 @Component({
   selector: 'app-root',

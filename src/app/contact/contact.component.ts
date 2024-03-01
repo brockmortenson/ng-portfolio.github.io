@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CurrentsService } from 'src/services/currents.service';
-import { Button, Buttons } from 'src/shared/button.interface';
+import { Button, Buttons } from 'src/shared/models/button.interface';
 
 @Component({
   selector: 'contact-component',

@@ -9,7 +9,7 @@ import { CurrentsService } from 'src/services/currents.service';
 })
 export class AboutMeComponent implements OnInit, OnDestroy {
   public isMobile: boolean = false;
-  public showSkills: boolean = true;
+  public showSkills: boolean = false;
 
   private mobileSubscription: Subscription = new Subscription();
 

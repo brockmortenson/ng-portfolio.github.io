@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Skill, SkillAttribute } from 'src/shared/skills-list.model';
+import { Skill, SkillAttribute } from 'src/shared/models/skills-list.model';
 
 @Component({
   selector: 'skill-analysis-component',

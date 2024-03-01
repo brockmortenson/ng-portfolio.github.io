@@ -1,0 +1,13 @@
+.wrapper {
+    border: 4px solid transparent;
+    background-color: rgba(255, 255, 255, 0.238);
+    transition: all 0.1s ease-in;
+
+    &:hover {
+        @extend .active-thick;
+    }
+}
+
+.active-thick {
+    border: 4px solid white;
+}

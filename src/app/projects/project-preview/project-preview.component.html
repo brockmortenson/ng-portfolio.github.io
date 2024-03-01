@@ -1,13 +1,9 @@
-<!-- <iframe
-src="../../../assets/videos/sgge-store-demo.mp4"
-height="399"
-width="710"
-frameborder="0"
-allow="fullscreen"
-title="sgge-store embed"></iframe>
-
-<embed class="rounded-3xl"
-src="../../../assets//videos/sgge-store-demo.mp4"
-autostart="false"
-height="399"
-width="710"/> -->
+<div class="wrapper rounded-md p-4 m-4 w-1/2">
+    <div class="container">
+        <div class="frame-wrapper flex justify-center" [innerHTML]="project.embed | safe: 'html'"></div>
+        <div class="info">
+            <p class="text-wrap">project name: {{project.name}}</p>
+            <p>{{ProjectType[project.projectType]}}</p>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Skill, SkillsList } from 'src/shared/skills-list.model';
+import { Skill, SkillsList } from 'src/shared/models/skills-list.model';
 
 @Component({
   selector: 'skills-component',

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SkillAttribute } from 'src/shared/skills-list.model';
+import { SkillAttribute } from 'src/shared/models/skills-list.model';
 
 @Component({
   selector: 'graph-bar-component',
@@ -17,7 +17,11 @@ export class GraphBarComponent implements OnInit {
     this.setDocumentStyles();
   }
 
-  public changeAttributeToPercent(): string {
+  public formatSkillLevel(): string {
+    return !this.skillAttribute.graphAsPercent ? this.skillAttribute.level : this.skillAttribute.level + '%'
+  }
+
+  public setWidthFromSkillLevel(): string {
     return !this.skillAttribute.graphAsPercent ? `${this.skillAttribute.level}0%` : `${this.skillAttribute.level}%`;
   }
 

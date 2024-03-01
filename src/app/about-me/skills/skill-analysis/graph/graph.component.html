@@ -1,5 +1,5 @@
 <div class="flex">
-  <div class="flex flex-col items-end pr-2" [class]="isMobile ? 'w-fit' : 'w-24'">
+  <div class="flex flex-col items-end pr-2" [class]="isMobile ? 'w-fit' : 'w-28'">
     <ng-container *ngFor="let skillAttribute of skillAttributes; let i = index">
       <p class="w-fit text-xs text-nowrap whitespace-nowrap py-2" [ngClass]="{'pt-4': i === 0}">{{skillAttribute.name}}</p>
     </ng-container>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Button } from 'src/shared/button.interface';
+import { Button } from 'src/shared/models/button.interface';
 
 @Component({
   selector: 'contact-button-component',
