@@ -1,9 +1,14 @@
-<div class="wrapper rounded-md p-4 m-4 w-1/2">
+<div class="wrapper rounded-md p-4"
+[class]="isMobile ? 'w-full' : 'w-full max-w-md'">
     <div class="container">
         <div class="frame-wrapper flex justify-center" [innerHTML]="project.embed | safe: 'html'"></div>
         <div class="info">
-            <p class="text-wrap">project name: {{project.name}}</p>
-            <p>{{ProjectType[project.projectType]}}</p>
+            <p class="text-wrap pt-2 font-bold">Project: {{project.name}}</p>
+            <p class="font-bold">Type of project: {{ProjectType[project.projectType]}}</p>
+            <div class="max-h-40 text-ellipsis overflow-y-auto mb-4">
+                <p>{{project.description}}</p>
+                <p class="pt-4" *ngIf="project.secondaryDescription">{{project.secondaryDescription}}</p>
+            </div>
         </div>
     </div>
 </div>

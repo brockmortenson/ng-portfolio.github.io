@@ -1,6 +1,37 @@
 <div class="wrapper">
-  <p class="title">// check out some of my work</p>
-  <ng-container *ngFor="let project of projectList.projects">
-    <project-preview-component [isMobile]="isMobile" [project]="project"></project-preview-component>
-  </ng-container>
+  <p class="title text-center text-xl pb-8">// bellow are some personal and professional projects that I've worked on</p>
+
+  <div class="preview-wrapper flex justify-evenly"
+  [class]="isMobile ? 'flex-nowrap overflow-x-auto' : 'flex-wrap'">
+    <ng-container *ngIf="!isMobile; else mobileView">
+      <ng-container *ngFor="let project of projectList.projects">
+        <project-preview-component class="w-2/5 m-4"
+        [isMobile]="isMobile"
+        [project]="project"></project-preview-component>
+      </ng-container>
+    </ng-container>
+
+    <ng-template #mobileView>
+      <div class="w-full flex flex-col items-center">
+        <div class="w-full pb-4">
+          <button class="cursor-pointer" mat-button (click)="back()">
+            <mat-icon class="icon">chevron_left</mat-icon>
+          </button>
+          <button class="cursor-pointer" mat-button (click)="next()">
+            <mat-icon class="icon">chevron_right</mat-icon>
+          </button>
+        </div>
+        <project-preview-component class="w-full"
+        [isMobile]="isMobile"
+        [project]="currentProject"></project-preview-component>
+        <div class="flex justify-evenly w-64 mt-4 rounded-md active-thin">
+          <ng-container *ngFor="let index of projectNumbers">
+            <div class="index cursor-pointer rounded-md px-3 py-2"
+            [ngClass]="{'active-index': currentProjectIsCurrentIndex(index)}"
+            (click)="goToProject(index)">{{index}}</div>
+          </ng-container>
+        </div>
+      </div>
+    </ng-template>
+  </div>
 </div>

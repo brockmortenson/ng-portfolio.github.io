@@ -13,6 +13,7 @@ import { SkillAnalysisComponent } from './about-me/skills/skill-analysis/skill-a
 import { GraphBarComponent } from './about-me/skills/skill-analysis/graph/graph-bar/graph-bar.component';
 import { GraphComponent } from './about-me/skills/skill-analysis/graph/graph.component';
 import { SafePipe } from 'src/shared/pipes/safe.pipe';
+import { EnumPipe } from 'src/shared/pipes/enum.pipe';
 
 @NgModule({
   declarations: [				
@@ -28,6 +29,7 @@ import { SafePipe } from 'src/shared/pipes/safe.pipe';
     ContactComponent,
     ContactButtonComponent,
     SafePipe,
+    EnumPipe,
    ],
   imports: [
     SharedModule,

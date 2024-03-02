@@ -1,0 +1,38 @@
+.wrapper {
+
+    .icon {
+        width: 2.75rem;
+        height: 2.75rem;
+        font-size: 2.75rem;
+        color: white;
+    }
+
+    .index {
+        transition: all 0.1s ease-in;
+     
+        &:hover {
+            @extend .active-index;
+        }
+    }
+}
+
+.active-thick {
+    border: 4px solid white;
+}
+
+.active-thin {
+    border: 1px solid white;
+}
+
+.active-index {
+    background: rgba(255, 255, 255, 0.238);
+}
+
+.mat-mdc-button.mat-mdc-button-base {
+    width: 50% !important;
+    height: 100% !important;
+}
+
+.mdc-button {
+    background: rgba(255, 255, 255, 0.238) !important;
+}
