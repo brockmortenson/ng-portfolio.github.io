@@ -14,6 +14,7 @@ import { GraphBarComponent } from './about-me/skills/skill-analysis/graph/graph-
 import { GraphComponent } from './about-me/skills/skill-analysis/graph/graph.component';
 import { SafePipe } from 'src/shared/pipes/safe.pipe';
 import { EnumPipe } from 'src/shared/pipes/enum.pipe';
+import { MobileSuggestionComponent } from './shared/material-module/mobile-suggestion/mobile-suggestion.component';
 
 @NgModule({
   declarations: [				
@@ -28,6 +29,7 @@ import { EnumPipe } from 'src/shared/pipes/enum.pipe';
     ProjectPreviewComponent,
     ContactComponent,
     ContactButtonComponent,
+    MobileSuggestionComponent,
     SafePipe,
     EnumPipe,
    ],

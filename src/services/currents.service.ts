@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, first, takeLast, takeUntil, tap, timer } from 'rxjs';
+import { HasShownSuggestionConst } from 'src/shared/models/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,6 @@ import { BehaviorSubject, Observable, first, takeLast, takeUntil, tap, timer } f
 export class CurrentsService {
   private readonly isMobile$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private readonly mobileSuggestion$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private readonly HasShownSuggestionConst: string = 'SUGGESTION_SHOWN';
 
   constructor() { }
 
@@ -57,12 +57,12 @@ export class CurrentsService {
     }
   }
 
-  private setHasShownMobileSuggestion(): void {
-    localStorage.setItem(this.HasShownSuggestionConst, 'true');
+  public setHasShownMobileSuggestion(): void {
+    sessionStorage.setItem(HasShownSuggestionConst, 'true');
   }
 
   private getHasShownSuggestion(): string {
-    const suggestion = localStorage.getItem(this.HasShownSuggestionConst);
+    const suggestion = sessionStorage.getItem(HasShownSuggestionConst);
     return suggestion ?? '';
   }
 }

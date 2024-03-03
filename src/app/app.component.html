@@ -34,6 +34,10 @@
     </header>
   </ng-container>
   
+  <mobile-suggestion-component class="absolute"
+  *ngIf="shouldShowMobileSuggestion"
+  (click)="closeMobileSuggestion()"></mobile-suggestion-component>
+  
   <main class="py-3 px-8 h-full" [ngClass]="{'no-scroll': toggled}">
     <router-outlet></router-outlet>
   </main>

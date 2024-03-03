@@ -1,0 +1,1 @@
+export const HasShownSuggestionConst = 'SUGGESTION_SHOWN';

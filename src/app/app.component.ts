@@ -17,6 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public currentUrl: string = '';
   public isMobile: boolean = false;
   public toggled: boolean = false;
+  public shouldShowMobileSuggestion: boolean = false;
 
   private readonly subscriptions: Subscription = new Subscription();
 
@@ -60,6 +61,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.toggled = !this.toggled;
   }
 
+  public closeMobileSuggestion(): void {
+    this.currentsService.setMobileSuggestion(false);
+  }
+
   private setCurrentUrl(url: string): void {
     if (url === '/') {
       this.currentUrl = '/home'
@@ -89,7 +94,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private listenToWindowResize(): void {
-    localStorage.clear();
     this.mobileSuggestionSubscription();
     this.isMobileSubscription();
     this.setIsMobile(window.innerWidth);
@@ -123,13 +127,15 @@ export class AppComponent implements OnInit, OnDestroy {
     if (!this.isMobile) {
       this.currentsService.handleMobileSuggestion();
     } else {
+      localStorage.clear();
+      this.currentsService.setHasShownMobileSuggestion();
       this.currentsService.setMobileSuggestion(false);
     }
   }
 
   private mobileSuggestionSubscription(): void {
     this.subscriptions.add(this.currentsService.getMobileSuggestion().subscribe((bool) => {
-      // console.log(bool);
+      this.shouldShowMobileSuggestion = bool;
     }));
   }
 }
