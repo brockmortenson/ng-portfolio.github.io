@@ -13,13 +13,13 @@
 
     <ng-template #mobileView>
       <div class="w-full flex flex-col items-center">
-        <div class="w-full pb-4">
-          <button class="cursor-pointer" mat-button (click)="back()">
+        <div class="w-full flex pb-4">
+          <div class="button flex justify-center w-1/2 rounded-l-md cursor-pointer active-background" (click)="back()">
             <mat-icon class="icon">chevron_left</mat-icon>
-          </button>
-          <button class="cursor-pointer" mat-button (click)="next()">
+          </div>
+          <div class="button flex justify-center w-1/2 rounded-r-md cursor-pointer active-background" (click)="next()">
             <mat-icon class="icon">chevron_right</mat-icon>
-          </button>
+          </div>
         </div>
         <project-preview-component class="w-full"
         [isMobile]="isMobile"
@@ -27,7 +27,7 @@
         <div class="flex justify-evenly w-64 mt-4 rounded-md active-thin">
           <ng-container *ngFor="let index of projectNumbers">
             <div class="index cursor-pointer rounded-md px-3 py-2"
-            [ngClass]="{'active-index': currentProjectIsCurrentIndex(index)}"
+            [ngClass]="{'active-background': currentProjectIsCurrentIndex(index)}"
             (click)="goToProject(index)">{{index}}</div>
           </ng-container>
         </div>

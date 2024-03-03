@@ -18,8 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public isMobile: boolean = false;
   public toggled: boolean = false;
 
-  private routerSubscription: Subscription = new Subscription();
-  private mobileSubscription: Subscription = new Subscription();
+  private readonly subscriptions: Subscription = new Subscription();
 
   constructor(private router: Router,
     private currentsService: CurrentsService) { }
@@ -27,17 +26,16 @@ export class AppComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.listenToWindowResize();
 
-    this.routerSubscription = this.router.events.pipe(
+    this.subscriptions.add(this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd),
       ).subscribe((event: any) => {
         this.setCurrentUrl(event.url)
         this.setBackgroundGradient(this.currentUrl);
-    });
+    }));
   }
 
   public ngOnDestroy(): void {
-    this.routerSubscription.unsubscribe();
-    this.mobileSubscription.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
   public routeTo(url: string): void {
@@ -91,6 +89,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private listenToWindowResize(): void {
+    localStorage.clear();
+    this.mobileSuggestionSubscription();
     this.isMobileSubscription();
     this.setIsMobile(window.innerWidth);
 
@@ -112,9 +112,24 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private isMobileSubscription(): void {
-    this.mobileSubscription = this.currentsService.getIsMobile().subscribe((bool) => {
+    this.subscriptions.add(this.currentsService.getIsMobile().subscribe((bool) => {
       this.isMobile = bool;
       !this.isMobile ? this.toggled = false : null;
-    });
+      this.mobileSuggestion();
+    }));
+  }
+
+  private mobileSuggestion(): void {
+    if (!this.isMobile) {
+      this.currentsService.handleMobileSuggestion();
+    } else {
+      this.currentsService.setMobileSuggestion(false);
+    }
+  }
+
+  private mobileSuggestionSubscription(): void {
+    this.subscriptions.add(this.currentsService.getMobileSuggestion().subscribe((bool) => {
+      // console.log(bool);
+    }));
   }
 }
