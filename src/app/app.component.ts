@@ -97,12 +97,14 @@ export class AppComponent implements OnInit, OnDestroy {
     this.mobileSuggestionSubscription();
     this.isMobileSubscription();
     this.setIsMobile(window.innerWidth);
+    this.handleMobileSuggestion();
 
     fromEvent(window, 'resize').pipe(
       debounceTime(50),
       tap((event: any) => {
         const width = event.target['innerWidth'];
         this.setIsMobile(width);
+        this.handleMobileSuggestion();
       }),
     ).subscribe();
   }
@@ -119,17 +121,15 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscriptions.add(this.currentsService.getIsMobile().subscribe((bool) => {
       this.isMobile = bool;
       !this.isMobile ? this.toggled = false : null;
-      this.mobileSuggestion();
     }));
   }
 
-  private mobileSuggestion(): void {
-    if (!this.isMobile) {
-      this.currentsService.handleMobileSuggestion();
-    } else {
-      localStorage.clear();
+  private handleMobileSuggestion(): void {
+    if (this.isMobile) {
       this.currentsService.setHasShownMobileSuggestion();
       this.currentsService.setMobileSuggestion(false);
+    } else {
+      this.currentsService.handleMobileSuggestion();
     }
   }
 

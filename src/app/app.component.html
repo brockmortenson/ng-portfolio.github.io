@@ -34,8 +34,8 @@
     </header>
   </ng-container>
   
-  <mobile-suggestion-component class="absolute"
-  *ngIf="shouldShowMobileSuggestion"
+  <mobile-suggestion-component class="suggestion fixed z-10"
+  [ngClass]="{'open': shouldShowMobileSuggestion, 'closed': !shouldShowMobileSuggestion}"
   (click)="closeMobileSuggestion()"></mobile-suggestion-component>
   
   <main class="py-3 px-8 h-full" [ngClass]="{'no-scroll': toggled}">

@@ -46,8 +46,8 @@ export class CurrentsService {
   public handleMobileSuggestion(): void {
     const hasShownSuggestion = this.getHasShownSuggestion();
 
-    if (!hasShownSuggestion) {
-      timer(3000).pipe(
+    if (!hasShownSuggestion?.length) {
+      timer(60000).pipe(
         first(),
         tap(() => {
           this.setMobileSuggestion(true)
@@ -58,11 +58,11 @@ export class CurrentsService {
   }
 
   public setHasShownMobileSuggestion(): void {
-    sessionStorage.setItem(HasShownSuggestionConst, 'true');
+    localStorage.setItem(HasShownSuggestionConst, 'true');
   }
 
-  private getHasShownSuggestion(): string {
-    const suggestion = sessionStorage.getItem(HasShownSuggestionConst);
-    return suggestion ?? '';
+  private getHasShownSuggestion(): string | null {
+    const suggestion = localStorage.getItem(HasShownSuggestionConst);
+    return suggestion;
   }
 }

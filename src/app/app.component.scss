@@ -92,6 +92,19 @@ main {
         }
     }
 
+    .suggestion {
+        transition: all 0.5s ease-in-out;
+        bottom: -10rem;
+
+        &.open {
+            bottom: 0;
+        }
+
+        &.closed {
+            bottom: -10rem;
+        }
+    }
+
     .active {
         border: 1px solid white;
     }
