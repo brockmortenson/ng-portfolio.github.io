@@ -1,3 +1,18 @@
 .wrapper {
-    background: rgba(255, 255, 255, 0.238);
+
+    &.orange-red {
+        background-color: #ff914dbd;
+    }
+
+    &.blue-light-blue {
+        background-color: #5ce1e6c1;
+    }
+
+    &.pink-orange {
+        background-color: #ffbf57b6;
+    }
+
+    &.blue-yellow {
+        background-color: #ffde59c1;
+    }
 }

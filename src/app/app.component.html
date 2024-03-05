@@ -35,6 +35,7 @@
   </ng-container>
   
   <mobile-suggestion-component class="suggestion fixed z-10"
+  [gradient]="gradient"
   [ngClass]="{'open': shouldShowMobileSuggestion, 'closed': !shouldShowMobileSuggestion}"
   (click)="closeMobileSuggestion()"></mobile-suggestion-component>
   

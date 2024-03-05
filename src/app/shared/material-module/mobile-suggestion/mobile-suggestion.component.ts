@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'mobile-suggestion-component',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mobile-suggestion.component.scss'],
 })
 export class MobileSuggestionComponent implements OnInit {
+  @Input() gradient!: string;
 
   constructor() { }
 

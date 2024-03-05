@@ -58,11 +58,11 @@ export class CurrentsService {
   }
 
   public setHasShownMobileSuggestion(): void {
-    localStorage.setItem(HasShownSuggestionConst, 'true');
+    sessionStorage.setItem(HasShownSuggestionConst, 'true');
   }
 
   private getHasShownSuggestion(): string | null {
-    const suggestion = localStorage.getItem(HasShownSuggestionConst);
+    const suggestion = sessionStorage.getItem(HasShownSuggestionConst);
     return suggestion;
   }
 }
