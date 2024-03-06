@@ -5,26 +5,29 @@
   [ngClass]="{'items-center flex-col': isMobile}">
     <div class="flex flex-col"
     [ngClass]="{'items-center': isMobile}">
-      <p class="pb-4" *ngIf="isMobile">// select a skill</p>
+      <div class="compare mb-4 rounded-md active-thin w-fit hover:border-transparent"
+      (click)="toggleIsComparing()">
+        <p class="px-3 py-2 whitespace-nowrap cursor-pointer">{{isComparing ? '// cancel' : '// compare'}}</p>
+      </div>
 
       <div class="skills rounded-md grid gap-4 w-fit active-thin p-4"
       [ngClass]="{'mb-8 grid-cols-7': isMobile, 'grid-cols-3 mr-8': !isMobile}">
         <ng-container *ngFor="let skill of skillsList.skills">
           <div class="image-wrapper w-6 cursor-pointer"
-          [ngClass]="{'selected-skill': currentSkill === skill}"
+          [ngClass]="{'selected-skill': findSelected(skill)}"
           [matTooltip]="skill.name"
-          (click)="setCurrentSkill(skill)">
+          (click)="selectionHandler(skill)">
             <img [src]="skill.imageSrc" [alt]="skill.name">
           </div>
         </ng-container>
       </div>
     </div>
 
-    <ng-container *ngIf="currentSkill; else selectSkill">
+    <ng-container *ngIf="selection.selected.length > 0; else selectSkill">      
       <skill-analysis-component class="w-full"
       [ngClass]="{'desktop': !isMobile}"
       [isMobile]="isMobile"
-      [skill]="currentSkill"></skill-analysis-component>
+      [selection]="selection"></skill-analysis-component>
     </ng-container>
 
     <ng-template #selectSkill>

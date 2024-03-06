@@ -1,4 +1,5 @@
-import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SelectionModel } from '@angular/cdk/collections';
 import { Skill, SkillsList } from 'src/shared/models/skills-list.model';
 
 @Component({
@@ -11,9 +12,10 @@ export class SkillsComponent implements OnInit {
   @Input() public isMobile: boolean = false;
 
   public skillsList: SkillsList = new SkillsList();
-  public currentSkill: Skill | null = null;
+  public isComparing: boolean = false;
+  public selection = new SelectionModel<Skill>(true, []);
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor() { }
 
   public ngOnInit() {
   }
@@ -22,15 +24,28 @@ export class SkillsComponent implements OnInit {
     this.toggleSkillsEvent.emit(true);
   }
 
-  public setCurrentSkill(skill: Skill): void {
-    if (this.currentSkill === skill) {
-      return;
+  public toggleIsComparing(): void {
+    this.isComparing ? this.selection.clear() : null;
+    this.isComparing = !this.isComparing;
+  }
+
+  public selectionHandler(skill: Skill): void {
+    if (this.isComparing) {
+      this.selection.toggle(skill);
+
+    } else {
+      this.selection.clear();
+      this.selection.toggle(skill);
+    }
+  }
+
+  public findSelected(skill: Skill): boolean {
+    const selected = this.selection.selected.indexOf(skill);
+    if (selected >= 0) {
+      return true;
     }
 
-    this.currentSkill = null; // <-- Required for
-    this.cdr.detectChanges(); // graph animation -->
-
-    this.currentSkill = skill;
+    return false;
   }
 
 }

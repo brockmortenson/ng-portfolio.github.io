@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SelectionModel } from '@angular/cdk/collections';
 import { Skill, SkillAttribute } from 'src/shared/models/skills-list.model';
 
 @Component({
@@ -8,20 +9,20 @@ import { Skill, SkillAttribute } from 'src/shared/models/skills-list.model';
 })
 export class SkillAnalysisComponent implements OnInit {
   @Input() public isMobile: boolean = false;
-  @Input() public skill!: Skill;
+  @Input() public selection = new SelectionModel<Skill>(true, []);
 
   constructor() { }
 
   public ngOnInit() {
   }
 
-  public filterSkillAttributes(isPercentGraph: boolean): Array<SkillAttribute> {
+  public filterSkillAttributes(skill: Skill, isPercentGraph: boolean): Array<SkillAttribute> {
     let attributes = [];
     if (isPercentGraph) {
-      attributes = this.skill.skillAttributes.filter((x) => x.graphAsPercent);
+      attributes = skill.skillAttributes.filter((x) => x.graphAsPercent);
       return attributes;
     } else {
-      attributes =  this.skill.skillAttributes.filter((x) => !x.graphAsPercent);
+      attributes =  skill.skillAttributes.filter((x) => !x.graphAsPercent);
       return attributes;
     }
   }

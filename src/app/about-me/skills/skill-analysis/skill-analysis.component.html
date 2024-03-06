@@ -1,21 +1,24 @@
-<div class="wrapper p-4 rounded-md w-full">
-  <div class="container flex" [class]="isMobile ? 'flex-col items-center' : 'flex-col items-center'">
-    <div class="image-wrapper flex items-center h-20">
-      <img class="w-16" [src]="skill.imageSrc" [alt]="skill.name">
-      <p class="text-xl pl-4">{{skill.name}}</p>
+<ng-container *ngFor="let skill of selection.selected; let last = last;">
+  <div class="wrapper p-4 rounded-md w-full"
+  [ngClass]="{'mb-4': selection.selected.length > 1 && !last}">
+    <div class="container flex" [class]="isMobile ? 'flex-col items-center' : 'flex-col items-center'">
+      <div class="image-wrapper flex items-center h-20">
+        <img class="w-16" [src]="skill.imageSrc" [alt]="skill.name">
+        <p class="text-xl pl-4">{{skill.name}}</p>
+      </div>
+
+      <graph-component class="w-full mb-8"
+      [isMobile]="isMobile"
+      [skillAttributes]="filterSkillAttributes(skill, true)"
+      [isPercentGraph]="true"
+      [skillColor]="skill.color"></graph-component>
+
+      <graph-component class="w-full"
+      [isMobile]="isMobile"
+      [skillAttributes]="filterSkillAttributes(skill, false)"
+      [isPercentGraph]="false"
+      [skillColor]="skill.color"></graph-component>
+
     </div>
-
-    <graph-component class="w-full mb-8"
-    [isMobile]="isMobile"
-    [skillAttributes]="filterSkillAttributes(true)"
-    [isPercentGraph]="true"
-    [skillColor]="skill.color"></graph-component>
-
-    <graph-component class="w-full"
-    [isMobile]="isMobile"
-    [skillAttributes]="filterSkillAttributes(false)"
-    [isPercentGraph]="false"
-    [skillColor]="skill.color"></graph-component>
-
   </div>
-</div>
+</ng-container>
