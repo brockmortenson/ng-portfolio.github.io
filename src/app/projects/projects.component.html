@@ -5,7 +5,7 @@
   [class]="isMobile ? 'flex-nowrap overflow-x-auto' : 'flex-wrap'">
     <ng-container *ngIf="!isMobile; else mobileView">
       <ng-container *ngFor="let project of projectList.projects">
-        <project-preview-component class="w-2/5 m-4"
+        <project-preview-component class="w-2/5 m-4 flex justify-center"
         [isMobile]="isMobile"
         [project]="project"></project-preview-component>
       </ng-container>
