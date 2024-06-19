@@ -3,15 +3,13 @@
 
   <div class="preview-wrapper flex justify-evenly"
   [class]="isMobile ? 'flex-nowrap overflow-x-auto' : 'flex-wrap'">
-    <ng-container *ngIf="!isMobile; else mobileView">
-      <ng-container *ngFor="let project of projectList.projects">
+    @if (!isMobile) {
+      @for (project of projectList.projects; track $index) {
         <project-preview-component class="w-2/5 m-4 flex justify-center"
         [isMobile]="isMobile"
         [project]="project"></project-preview-component>
-      </ng-container>
-    </ng-container>
-
-    <ng-template #mobileView>
+      }
+    } @else {
       <div class="w-full flex flex-col items-center">
         <div class="w-full flex pb-4">
           <div class="button flex justify-center w-1/2 rounded-l-md cursor-pointer active-background" (click)="back()">
@@ -25,13 +23,13 @@
         [isMobile]="isMobile"
         [project]="currentProject"></project-preview-component>
         <div class="flex justify-evenly w-64 mt-4 rounded-md active-thin">
-          <ng-container *ngFor="let index of projectNumbers">
+          @for (index of projectNumbers; track $index) {
             <div class="index cursor-pointer rounded-md px-3 py-2"
             [ngClass]="{'active-background': currentProjectIsCurrentIndex(index)}"
             (click)="goToProject(index)">{{index}}</div>
-          </ng-container>
+          }
         </div>
       </div>
-    </ng-template>
+    }
   </div>
 </div>

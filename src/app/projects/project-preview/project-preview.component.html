@@ -7,7 +7,9 @@
             <p class="font-bold">Type of project: {{ProjectType[project.projectType]}}</p>
             <div class="max-h-40 text-ellipsis overflow-y-auto mb-4">
                 <p>{{project.description}}</p>
-                <p class="pt-4" *ngIf="project.secondaryDescription">{{project.secondaryDescription}}</p>
+                @if (project.secondaryDescription) {
+                    <p class="pt-4">{{project.secondaryDescription}}</p>
+                }
             </div>
         </div>
     </div>

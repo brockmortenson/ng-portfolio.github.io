@@ -4,7 +4,12 @@
     [ngClass]="{'w-20': !isMobile}"
     [src]="button.imageSrc"
     [alt]="button.alt">
-    <p class="text-3xl pl-6" *ngIf="!isMobile">{{button.name}}</p>
-    <a [href]="button.url" *ngIf="button.name.includes('email')"></a>
+    @if (!isMobile) {
+      <p class="text-3xl pl-6">{{button.name}}</p>
+    }
+
+    @if (button.name.includes('email')) {
+      <a [href]="button.url"></a>
+    }
   </div>
 </div>

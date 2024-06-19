@@ -1,4 +1,4 @@
-<ng-container *ngIf="!showSkills; else skills">
+@if (!showSkills) {
   <div class="wrapper h-full">    
     <div class="flex justify-evenly items-center">
       <div class="image-wrapper" [class]="isMobile ? 'w-1/2' : 'w-80'">
@@ -20,8 +20,6 @@
       </span>
     </div>
   </div>
-</ng-container>
-
-<ng-template #skills>
+} @else {
   <skills-component (toggleSkillsEvent)="toggleSkills($event)" [isMobile]="isMobile"></skills-component>
-</ng-template>
+}

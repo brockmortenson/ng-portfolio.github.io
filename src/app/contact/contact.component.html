@@ -1,13 +1,11 @@
 <div class="wrapper flex flex-col items-center"
 [class]="isMobile ? 'justify-between' : 'justify-center'">
-  <span class="pt-4" [class]="isMobile ? 'text-4xl' : 'text-5xl pb-10'">contact.me()</span>
-
   <div class="flex flex-col justify-between"
   [class]="isMobile ? 'pt-8 items-center' : 'items-start'">
-    <ng-container *ngFor="let button of contactButtons.buttons">
+    @for (button of contactButtons.buttons; track $index) {
       <contact-button-component
       [isMobile]="isMobile"
       [button]="button"></contact-button-component>
-    </ng-container>
+    }
   </div>
 </div>

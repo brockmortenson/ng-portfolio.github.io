@@ -12,28 +12,26 @@
 
       <div class="skills rounded-md grid gap-4 w-fit active-thin p-4"
       [ngClass]="{'mb-8 grid-cols-7': isMobile, 'grid-cols-3 mr-8': !isMobile}">
-        <ng-container *ngFor="let skill of skillsList.skills">
+        @for (skill of skillsList.skills; track $index) {
           <div class="image-wrapper w-6 cursor-pointer"
           [ngClass]="{'selected-skill': findSelected(skill)}"
           [matTooltip]="skill.name"
           (click)="selectionHandler(skill)">
             <img [src]="skill.imageSrc" [alt]="skill.name">
           </div>
-        </ng-container>
+        }
       </div>
     </div>
 
-    <ng-container *ngIf="selection.selected.length > 0; else selectSkill">      
+    @if (selection.selected.length > 0) {
       <skill-analysis-component class="w-full"
       [ngClass]="{'desktop': !isMobile}"
       [isMobile]="isMobile"
       [selection]="selection"></skill-analysis-component>
-    </ng-container>
-
-    <ng-template #selectSkill>
+    } @else {
       <div class="flex justify-center items-center" [ngClass]="{'desktop text-xl': !isMobile}">
         <p class="text-center">// select a skill to view more detailed information here</p>
       </div>
-    </ng-template>
+    }
   </div>
 </div>

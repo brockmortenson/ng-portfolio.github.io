@@ -2,37 +2,40 @@
 [class]="gradient"
 [ngClass]="{'mobile': isMobile}"
 [style.opacity]="dampenGradientOpacity ? 0.7 : 1">
-  <ng-container *ngIf="!isMobile">
+  @if (!isMobile) {
     <header class="px-3 flex items-center justify-center bg-transparent">
-      <ng-container *ngFor="let route of routes | keyvalue: unsorted">
+      @for (route of routes | keyvalue: unsorted; track $index) {
         <div class="py-2 px-3 mx-3 cursor-pointer text-xl rounded-md route"
         [ngClass]="{'active': currentUrl === route.value.url}"
         (click)="routeTo(route.value.url)">{{route.value.name}}</div>
-      </ng-container>
+      }
     </header>
-  </ng-container>
+  }
 
-  <ng-container *ngIf="isMobile">
+  @if (isMobile) {
     <div class="icon pr-5 h-20 flex justify-end items-center"
     [ngClass]="{'icon-opened': toggled}">
-      <mat-icon *ngIf="!toggled" (click)="toggleNav()">menu</mat-icon>
-      <mat-icon *ngIf="toggled" (click)="toggleNav()">close</mat-icon>
+      @if (!toggled) {
+        <mat-icon (click)="toggleNav()">menu</mat-icon>
+      } @else {
+        <mat-icon (click)="toggleNav()">close</mat-icon>
+      }
     </div>
 
     <header class="nav fixed w-full bg-transparent flex"
     [ngClass]="{'open': toggled, 'closed': !toggled}">
       <div class="overlay w-1/2" (click)="toggleNav()"></div>
       <div class="w-1/2 overlay">
-        <ng-container *ngFor="let route of routes | keyvalue: unsorted">
+        @for (route of routes | keyvalue: unsorted; track $index) {
           <div class="py-4">
             <div class="py-2 px-3 mx-3 cursor-pointer text-2xl rounded-md route"
             [ngClass]="{'active': currentUrl === route.value.url}"
             (click)="routeTo(route.value.url)">{{route.value.name}}</div>
           </div>
-        </ng-container>
+        }
       </div>
     </header>
-  </ng-container>
+  }
   
   <mobile-suggestion-component class="suggestion fixed z-10"
   [gradient]="gradient"

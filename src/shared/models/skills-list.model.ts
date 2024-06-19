@@ -11,9 +11,9 @@ export class SkillsList {
 
         this.skills = [
             {
-                imageSrc: './assets/images/angular-logo.webp',
+                imageSrc: './assets/images/angular-logo.png',
                 name: 'Angular',
-                color: 'rgb(216 0 41)',
+                color: '#bf38f5',
                 skillAttributes: [
                     {
                         name: 'Mastery',
@@ -27,7 +27,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '3',
+                        level: '5',
                         graphAsPercent: false,
                     },
                     {
@@ -49,17 +49,17 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '75',
-                        graphAsPercent: true,
-                    },
-                    {
-                        name: 'Proficiency',
                         level: '80',
                         graphAsPercent: true,
                     },
                     {
+                        name: 'Proficiency',
+                        level: '85',
+                        graphAsPercent: true,
+                    },
+                    {
                         name: 'Exp. (yrs)',
-                        level: '2',
+                        level: '3',
                         graphAsPercent: false,
                     },
                     {
@@ -81,7 +81,7 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '80',
+                        level: '90',
                         graphAsPercent: true,
                     },
                     {
@@ -91,7 +91,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '3',
+                        level: '5',
                         graphAsPercent: false,
                     },
                     {
@@ -113,7 +113,7 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '80',
+                        level: '90',
                         graphAsPercent: true,
                     },
                     {
@@ -123,12 +123,12 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '4',
+                        level: '6',
                         graphAsPercent: false,
                     },
                     {
                         name: 'Enjoyment',
-                        level: '7',
+                        level: '8',
                         graphAsPercent: false,
                     },
                     {
@@ -155,7 +155,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '3',
+                        level: '4',
                         graphAsPercent: false,
                     },
                     {
@@ -187,7 +187,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '4',
+                        level: '6',
                         graphAsPercent: false,
                     },
                     {
@@ -219,7 +219,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '4',
+                        level: '6',
                         graphAsPercent: false,
                     },
                     {
@@ -305,17 +305,17 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '50',
+                        level: '70',
                         graphAsPercent: true,
                     },
                     {
                         name: 'Proficiency',
-                        level: '65',
+                        level: '75',
                         graphAsPercent: true,
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '3',
+                        level: '4',
                         graphAsPercent: false,
                     },
                     {
@@ -337,17 +337,17 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '55',
+                        level: '65',
                         graphAsPercent: true,
                     },
                     {
                         name: 'Proficiency',
-                        level: '55',
+                        level: '70',
                         graphAsPercent: true,
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '3',
+                        level: '4',
                         graphAsPercent: false,
                     },
                     {
@@ -357,7 +357,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Comfortability',
-                        level: '6',
+                        level: '7',
                         graphAsPercent: false,
                     },
                 ],
@@ -369,7 +369,7 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '45',
+                        level: '65',
                         graphAsPercent: true,
                     },
                     {
@@ -379,7 +379,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '2',
+                        level: '3',
                         graphAsPercent: false,
                     },
                     {
@@ -389,7 +389,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Comfortability',
-                        level: '5',
+                        level: '7',
                         graphAsPercent: false,
                     },
                 ],
@@ -401,7 +401,7 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '35',
+                        level: '55',
                         graphAsPercent: true,
                     },
                     {
@@ -411,7 +411,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '2',
+                        level: '3',
                         graphAsPercent: false,
                     },
                     {
@@ -421,7 +421,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Comfortability',
-                        level: '4',
+                        level: '6',
                         graphAsPercent: false,
                     },
                 ],
@@ -433,12 +433,12 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '50',
+                        level: '55',
                         graphAsPercent: true,
                     },
                     {
                         name: 'Proficiency',
-                        level: '55',
+                        level: '65',
                         graphAsPercent: true,
                     },
                     {
@@ -465,17 +465,17 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '30',
-                        graphAsPercent: true,
-                    },
-                    {
-                        name: 'Proficiency',
                         level: '40',
                         graphAsPercent: true,
                     },
                     {
+                        name: 'Proficiency',
+                        level: '50',
+                        graphAsPercent: true,
+                    },
+                    {
                         name: 'Exp. (yrs)',
-                        level: '1',
+                        level: '2',
                         graphAsPercent: false,
                     },
                     {
@@ -485,7 +485,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Comfortability',
-                        level: '4',
+                        level: '5',
                         graphAsPercent: false,
                     },
                 ],
@@ -507,12 +507,12 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '4',
+                        level: '6',
                         graphAsPercent: false,
                     },
                     {
                         name: 'Enjoyment',
-                        level: '5',
+                        level: '6',
                         graphAsPercent: false,
                     },
                     {
@@ -529,7 +529,7 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '45',
+                        level: '65',
                         graphAsPercent: true,
                     },
                     {
@@ -539,7 +539,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '3',
+                        level: '4',
                         graphAsPercent: false,
                     },
                     {
@@ -561,12 +561,12 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '25',
+                        level: '35',
                         graphAsPercent: true,
                     },
                     {
                         name: 'Proficiency',
-                        level: '35',
+                        level: '45',
                         graphAsPercent: true,
                     },
                     {
@@ -603,7 +603,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '3',
+                        level: '4',
                         graphAsPercent: false,
                     },
                     {
@@ -635,7 +635,7 @@ export class SkillsList {
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '4',
+                        level: '6',
                         graphAsPercent: false,
                     },
                     {
@@ -657,27 +657,27 @@ export class SkillsList {
                 skillAttributes: [
                     {
                         name: 'Mastery',
-                        level: '40',
+                        level: '60',
                         graphAsPercent: true,
                     },
                     {
                         name: 'Proficiency',
-                        level: '55',
+                        level: '75',
                         graphAsPercent: true,
                     },
                     {
                         name: 'Exp. (yrs)',
-                        level: '2',
+                        level: '3',
                         graphAsPercent: false,
                     },
                     {
                         name: 'Enjoyment',
-                        level: '6',
+                        level: '7',
                         graphAsPercent: false,
                     },
                     {
                         name: 'Comfortability',
-                        level: '7',
+                        level: '8',
                         graphAsPercent: false,
                     },
                 ],
